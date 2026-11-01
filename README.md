@@ -2,6 +2,12 @@
 
 A small setup layer on the official LightRAG v1.5.7 container, pinned by digest in `Dockerfile`. A separate native Railway PostgreSQL service supplies the database and pgvector extension. No model provider credentials are bundled.
 
+## Deploy on Railway
+
+[Deploy LightRAG with PostgreSQL and protected setup on Railway](https://railway.com/deploy/lightrag-1).
+
+The linked community template is maintained by XavTo and builds from this repository. It creates the LightRAG application and a native Railway PostgreSQL service for graph, vector and document state. Choose it when you want PostgreSQL/pgvector storage and a protected in-product configuration screen: provider keys can be added after deployment, or supplied through Railway variables. It is a community deployment extension, not an official HKUDS hosting service. Ingestion and answers still require working chat and embedding providers; inference credits and Railway charges are separate.
+
 ## First launch
 
 You can supply `LLM_BINDING_API_KEY` and `EMBEDDING_BINDING_API_KEY` in Railway, or leave them empty and open the application's HTTPS domain. The setup screen is at `/setup` and uses the existing `ADMIN_USERNAME` / `ADMIN_PASSWORD` administrator account. Railway's `AUTH_ACCOUNTS` must reference those values. The template generates the administrator password, `LIGHTRAG_API_KEY` and `TOKEN_SECRET` independently.
